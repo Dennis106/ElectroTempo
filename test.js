@@ -1,12 +1,11 @@
-const defaultValue = 0;
-
 function make_pair(first, last) {
   return first+':'+last;
 }
 
 class interval_map {
-  constructor() {
+  constructor(value) {
     this.result = {};
+	this.defaultValue = value;
   }
   
   insert(range, value) {
@@ -21,11 +20,11 @@ class interval_map {
         return arr[i][1];
       }
     }
-    return defaultValue;
+    return this.defaultValue;
   }
 }
 
-let myMap = new interval_map();
+let myMap = new interval_map(0);
 
 myMap.insert(make_pair(1,5),3);
 
